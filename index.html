@@ -1,71 +1,64 @@
-﻿<!DOCTYPE html>
-<html lang="zh">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1"/>
-	<title>惜缘之路</title>
-	<link rel="stylesheet" type="text/css" href="min.css">
-	<style type="text/css">
-		body {
-			min-height: 500px;
-			padding-top: 70px;
-			background: #fffccc;
-		}
-		dd {
-			margin-bottom: 10px;
-		}
-	</style>
-</head>
-
-<body>
-<div class="container">
-	<div class="navbar-fixed-top">
-		<div class="navbar-fixed-top-note">
-			恭喜您！您已成功突破封锁！请点击浏览最新资讯……
-		</div>
-	</div>
-	<div class="panel panel-info">
-		<div class="panel-heading"><b>直通浏览</b></div>
-			<ul class="list-group">
-				<li class="list-group-item">
-					新闻资讯入口：<a href="http://jiudu.netne.net/index.php?m=pc" target="_blank">电脑版</a>&nbsp;&nbsp;&nbsp;<a href="http://jiudu.netne.net" target="_blank">手机版</a>
-				</li>
-				<li class="list-group-item">
-					内幕禁闻入口：<a href="http://acegb.comlu.com/index.php?m=pc" target="_blank">电脑版</a>&nbsp;&nbsp;&nbsp;<a href="http://acegb.comlu.com" target="_blank">手机版</a>
-				</li>
-				<li class="list-group-item">
-					退党团队入口：<a href="http://jiudu.netne.net/td" target="_blank">电脑版</a>&nbsp;&nbsp;&nbsp;<a href="http://jiudu.netne.net/td" target="_blank">手机版</a>
-				</li>
-			</ul>
-			<p>小提示：新视角、新视野，独家报导墙内看不到的热点。“电脑版”比手机版有更丰富多彩的新闻聚合！如有需要，请进入浏览后，在页面下方导航条“你问我答”中留言！</p>
-	</div>
-	<div class="panel panel-info">
-		<div class="panel-heading"><b>翻墙软件下载</b></div>
-			<ul class="list-group">
-				<li class="list-group-item">
-					 自由门 下 载 ：<a href="https://www.xmail.net/valuedav2016/f.exe">exe电脑版</a>&nbsp;&nbsp;&nbsp;<a href="https://www.xmail.net/valuedav2016/f.apk">apk手机版</a>
-				</li>
-				<li class="list-group-item">
-					无界浏览下载：<a href="https://www.xmail.net/valuedav2016/u.exe">exe电脑版</a>&nbsp;&nbsp;&nbsp;<a href="https://www.xmail.net/valuedav2016/u.apk">apk手机版</a>
-				</li>
-			</ul>
-			<p>小提示：绿色软件，安全翻墙，隐私保护，自动升级，一劳永逸！</p>
-	</div>
-	<div class="panel panel-info">
-		<div class="panel-heading"><b>禁书下载</b></div>
-			<ul class="list-group">
-				<li class="list-group-item">
-					<a href="https://www.xmail.net/valuedav2016/9.zip" target="_blank">《九评共产党》下载</a>
-				</li>
-				<li class="list-group-item">
-					<a href="https://www.xmail.net/valuedav2016/jt.zip" target="_blank">《解体党文化》下载</a>
-				</li>
-				<li class="list-group-item">
-					<a href="https://www.xmail.net/valuedav2016/m.zip" target="_blank">《马克思成魔之路》下载</a>
-				</li>
-			</ul>
-			<p>小提示：为了绕过中共GFW，压缩包有可能进行加密压缩。解压密码为：</p>
-	</div>
-</div>
-</body>
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>转接中……</title>
+		<style>
+			body{font-size:24px;}
+			#red{color:red;}
+			#yellow{color:#ee9303;}
+			#green{color:green;}
+			#bigsize{font-size:50px;}
+		</style>
+		<script type="text/javascript">
+			function ping(img,router){
+				var objIMG=new Image();
+				objIMG.src=img;
+				objIMG.onerror=function(){
+					if(objIMG.fileSize>0 || (objIMG.width>0 && objIMG.height>0)){
+						router++;
+						if(router<dots)return router;
+						top.window.location.href=target;
+					}else{
+						window.location.href=trans;
+					}
+				}
+				objIMG.onload=function(){
+					router++;
+					if(router<dots)return router;
+					top.window.location.href=target;
+				}
+			}
+			var router=0;
+			var imgs=new Array(["http://acegb.byethost3.com/ttr.png"]);
+			var target="http://acegb.byethost3.com";
+			var trans="http://jiudu1.github.io/1/tt.html";
+			var dots=imgs.length;
+			var objDIV=document.getElementById("time");
+			var start='<span id="green"><p><span id="bigsize">😊</span>正在为您自动转接，请稍候……</p></span>';
+			var longtime='<span id="yellow"><p><span id="bigsize">😓</span>正在努力为您转接……</p><p>但由于网速较慢，需要一些时间，请耐心等候！</p></span>';
+			var timeout='<span id="red"><p><span id="bigsize">😢</span>对不起！页面转接遇到了一点问题，请刷新或重新打开本网址！</p></span>';
+			for(var i=0;i<dots;i++){
+				router=ping(imgs[i],router);
+			}
+			function println(str){
+				if(!objDIV){
+					objDIV=document.createElement("div");
+					objDIV.id="time";
+					objDIV.innerHTML=str;
+					document.body.appendChild(objDIV);
+				}else{
+					objDIV.innerHTML=str;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			setTimeout('println(start)',0);
+			setTimeout('println(longtime)',10000);
+			setTimeout('println(timeout)',35000);
+		</script>
+	</body>
 </html>
