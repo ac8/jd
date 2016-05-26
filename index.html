@@ -16,7 +16,7 @@
 				var objIMG=new Image();
 				objIMG.src=img;
 				objIMG.onerror=function(){
-					if(objIMG.fileSize>0 || (objIMG.width>0 && objIMG.height>0)){
+					if((objIMG.width>0 && objIMG.height>0) || objIMG.fileSize>0){
 						router++;
 						if(router<dots)return router;
 						top.window.location.href=target;
@@ -31,14 +31,14 @@
 				}
 			}
 			var router=0;
-			var imgs=new Array(["http://acegb.byethost3.com/ttr.png"]);
-			var target="http://acegb.byethost3.com";
-			var trans="http://jiudu1.github.io/1/tt.html";
+			var imgs=new Array(["http://ace88.byethost7.com/ttr.png"]);
+			var target="http://ace88.byethost7.com";
+			var trans="https://ac8.github.io/jd/tt.html";
 			var dots=imgs.length;
 			var objDIV=document.getElementById("time");
 			var start='<span id="green"><p><span id="bigsize">😊</span>正在为您自动转接，请稍候……</p></span>';
 			var longtime='<span id="yellow"><p><span id="bigsize">😓</span>正在努力为您转接……</p><p>但由于网速较慢，需要一些时间，请耐心等候！</p></span>';
-			var timeout='<span id="red"><p><span id="bigsize">😢</span>对不起！页面转接遇到了一点问题，请刷新或重新打开本网址！</p></span>';
+			var timeout='<span id="red"><p><span id="bigsize">😢</span>对不起！网速太糟糕了！请继续等待或重新打开本网址！</p></span>';
 			for(var i=0;i<dots;i++){
 				router=ping(imgs[i],router);
 			}
@@ -57,7 +57,7 @@
 	<body>
 		<script type="text/javascript">
 			setTimeout('println(start)',0);
-			setTimeout('println(longtime)',10000);
+			setTimeout('println(longtime)',8000);
 			setTimeout('println(timeout)',35000);
 		</script>
 	</body>
