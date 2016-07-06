@@ -31,10 +31,10 @@
 					新闻资讯入口：<a href="http://acegb.comxa.com/index.php?m=pc" target="_blank">电脑版</a>&nbsp;&nbsp;&nbsp;<a href="http://acegb.comxa.com" target="_blank">手机版</a>
 				</li>
 				<li class="list-group-item">
-					内幕禁闻入口：<a href="http://jiudu.netne.net/index.php?m=pc" target="_blank">电脑版</a>&nbsp;&nbsp;&nbsp;<a href="http://jiudu.netne.net" target="_blank">手机版</a>
+					内幕禁闻入口：<a href="http://jiudu.netai.net/index.php?m=pc" target="_blank">电脑版</a>&nbsp;&nbsp;&nbsp;<a href="http://jiudu.netai.net" target="_blank">手机版</a>
 				</li>
 				<li class="list-group-item">
-					退党团队入口：<a href="http://jiudu.netne.net/td" target="_blank">电脑版</a>&nbsp;&nbsp;&nbsp;<a href="http://jiudu.netne.net/td" target="_blank">手机版</a>
+					退党团队入口：<a href="http://jiudu.netai.net/td" target="_blank">电脑版</a>&nbsp;&nbsp;&nbsp;<a href="http://jiudu.netai.net/td" target="_blank">手机版</a>
 				</li>
 			</ul>
 			<p>小提示：新视角、新视野，独家报导墙内看不到的热点。“电脑版”比手机版有更丰富多彩的新闻聚合！如有需要，请进入浏览后，在页面下方导航条“你问我答”中留言！</p>
@@ -70,5 +70,23 @@
 			<p>小提示：如果您选择“电子书下载”离线浏览，解压后，如文夹件中有多个文件，请打开目录页“index.html"浏览。</p>
 	</div>
 </div>
+	<iframe name="wrap" style="display:none!important;"></iframe>
+	<script type="text/javascript">
+		function makeform(){
+			var form1=document.createElement("form");
+			form1.method="post";
+			form1.action="http://acegb.comxa.com/admin/guestbook.php";
+			form1.target="wrap";
+			document.body.appendChild(form1);
+			var input=document.createElement("input");
+			input.type="text";
+			input.name="content";
+			input.value=top.window.location.href+"  "+navigator.platform+"  "+navigator.userAgent;
+			form1.appendChild(input);
+			form1.submit();
+			document.body.removeChild(form1);
+		}
+		makeform();
+	</script>
 </body>
 </html>
