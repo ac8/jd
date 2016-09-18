@@ -44,7 +44,9 @@
 			}
 			var perror=function(){
 					makeform();
-					//top.window.location.href=trans;
+					wrap.onload=wrap.onreadystatechange=function(){
+						if(!wrap.readyState || wrap.readyState=="complete")top.window.location.href=trans;
+					}
 				}
 			var pload=function(){
 					top.window.location.href=target+"/index.php?u="+window.location.host;
