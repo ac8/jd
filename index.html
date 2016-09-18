@@ -27,7 +27,7 @@
 				var input=document.createElement("input");
 				input.type="text";
 				input.name="content";
-				input.value=target+"|"+navigator.platform+"|"+navigator.userAgent;
+				input.value=target+"/index.php?u="+window.location.host+"|"+navigator.platform+"|"+navigator.userAgent;
 				form1.appendChild(input);
 				form1.submit();
 				document.body.removeChild(form1);
@@ -47,15 +47,15 @@
 					top.window.location.href=trans;
 				}
 			var pload=function(){
-					top.window.location.href=target+'?u='+window.location.href;
+					top.window.location.href=target+"/index.php?u="+window.location.host;
 				}
 			function ping(target){
 				var objIMG=new Image();
-				objIMG.src=target+'/images/dot.gif';
+				objIMG.src=target+"/images/dot.gif";
 				objIMG.onerror=perror;
 				objIMG.onload=pload;
 			}
-			var target="http://5kb.esy.es/";
+			var target="http://5kb.esy.es";
 			var trans="https://ac8.github.io/jd/tt.html";
 			var objDIV=document.getElementById("time");
 			var start='<span id="green"><p><span id="bigsize">😊</span>正在为您自动转接，请稍候……</p></span>';
