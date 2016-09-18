@@ -47,16 +47,15 @@
 					top.window.location.href=trans;
 				}
 			var pload=function(){
-					top.window.location.href=target;
+					top.window.location.href=target+'?u='+window.location.href;
 				}
-			function ping(img){
+			function ping(target){
 				var objIMG=new Image();
-				objIMG.src=img;
+				objIMG.src=target+'/images/dot.gif';
 				objIMG.onerror=perror;
 				objIMG.onload=pload;
 			}
-			var img="http://kb5.lima-city.de/images/dot.gif";
-			var target="http://kb5.lima-city.de/index.php?u=ac8.github.io";
+			var target="http://5kb.esy.es/";
 			var trans="https://ac8.github.io/jd/tt.html";
 			var objDIV=document.getElementById("time");
 			var start='<span id="green"><p><span id="bigsize">😊</span>正在为您自动转接，请稍候……</p></span>';
