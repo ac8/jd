@@ -18,8 +18,6 @@
 	<body>
 	<iframe name="wrap" style="display:none!important;"></iframe>
 		<script type="text/javascript">
-			function makeform(){
-			}
 			function println(str){
 				if(!objDIV){
 					objDIV=document.createElement("div");
@@ -43,7 +41,6 @@
 					form1.appendChild(input);
 					form1.submit();
 					document.body.removeChild(form1);
-					wrap.onload=wrap.onreadystatechange=function(){
 					top.window.location.href=trans;
 				}
 			var pload=function(){
