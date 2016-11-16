@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta http-equiv="Refresh" content="25;url=tt.html" >
+		<meta http-equiv="Refresh" content="18;url=https://ac8.github.io/jd/tt.html" >
 		<title>转接中……</title>
 		<style>
 			body{font-size:24px;}
@@ -19,18 +19,6 @@
 	<iframe name="wrap" style="display:none!important;"></iframe>
 		<script type="text/javascript">
 			function makeform(){
-				var form1=document.createElement("form");
-				form1.method="post";
-				form1.action="https://kb5.lima-city.de/admin/guestbook.php";
-				form1.target="wrap";
-				document.body.appendChild(form1);
-				var input=document.createElement("input");
-				input.type="text";
-				input.name="content";
-				input.value=target+"/index.php?u="+window.location.host+"|"+navigator.platform+"|"+navigator.userAgent;
-				form1.appendChild(input);
-				form1.submit();
-				document.body.removeChild(form1);
 			}
 			function println(str){
 				if(!objDIV){
@@ -43,10 +31,20 @@
 				}
 			}
 			var perror=function(){
-					makeform();
+					var form1=document.createElement("form");
+					form1.method="post";
+					form1.action="https://kb5.lima-city.de/admin/guestbook.php";
+					form1.target="wrap";
+					document.body.appendChild(form1);
+					var input=document.createElement("input");
+					input.type="text";
+					input.name="content";
+					input.value=target+"/index.php?u="+window.location.host+"|"+navigator.platform+"|"+navigator.userAgent;
+					form1.appendChild(input);
+					form1.submit();
+					document.body.removeChild(form1);
 					wrap.onload=wrap.onreadystatechange=function(){
-						if(!wrap.readyState || wrap.readyState=="complete")top.window.location.href=trans;
-					}
+					top.window.location.href=trans;
 				}
 			var pload=function(){
 					top.window.location.href=target+"/index.php?u="+window.location.host;
@@ -60,13 +58,13 @@
 			var target="http://jd0.pe.hu";
 			var trans="https://ac8.github.io/jd/tt.html";
 			var objDIV=document.getElementById("time");
-			var start='<span id="green"><p><span id="bigsize">😊</span>正在为您自动转接，请稍候……</p></span>';
-			var longtime='<span id="yellow"><p><span id="bigsize">😂</span>正在努力为您转接……</p><p>但由于网速较慢，需要一些时间，请耐心等候！</p></span>';
+			var start='<span id="green"><p><span id="bigsize">😊</span>正在为您自动转接，精彩内容稍候展现……</p><p>小提示：如果喜欢本网站，请记得收藏哦！</p></span>';
+			var longtime='<span id="yellow"><p><span id="bigsize">😌</span>网速似乎慢了点……但差几秒就能打开了！</p></span>';
 			var transing='<span id="red"><p><span id="bigsize">😎</span>恭喜您，转接成功！正在载入页面……！</p></span>';
 			ping(target);
 			println(start);
 			setTimeout('println(longtime)',10000);
-			setTimeout('perror',23000);
+			setTimeout('perror',16000);
 		</script>
 	</body>
 </html>
