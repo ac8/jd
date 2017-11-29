@@ -163,11 +163,11 @@
 
 				if(iframe.attachEvent){
 					iframe.attachEvent("onload", function(){
-						if(targetStatus<3)swicher('disable');
+						if(targetStatus<3 && !iframe.src.indexOf(furl))swicher('disable');
 					});
 				}else{
 					iframe.onload = function(){
-						if(targetStatus<3)swicher('disable');
+						if(targetStatus<3 && !iframe.src.indexOf(furl))swicher('disable');
 					};
 				}
 
