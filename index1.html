@@ -131,7 +131,7 @@
 		</script>
 		<iframe src="#" width="100%" height="100%" frameborder="0" name="target" id="target" ></iframe>
 		<script type="text/javascript">
-			var timeId,ptimeId,furl,turl,curl='';
+			var timeId,ptimeId,start,stop,furl,turl,curl='';
 			var iframe=document.getElementById('target');
 			var top_bar=document.getElementById('top_bar');
 			var num=document.getElementById('num');
@@ -139,7 +139,13 @@
 			var percent=0;
 			var targetStatus=0;
 			furl=window.location.href;
-			furl=furl.substring(furl.indexOf('//')+2,furl.lastIndexOf('/'));
+			start=furl.indexOf('//')+2;
+			stop=furl.lastIndexOf('/');
+			if(start<stop){
+  				furl=furl.substring(start,stop);
+			}else{
+				furl=furl.substring(start);
+			}
 			if(is_weixin()){
 				iframe.src='./ismic.html';
 			}else{
