@@ -11,6 +11,7 @@
 			#LoadingBar{transition:all 1s;-moz-transition:all 1s;-webkit-transition:all 1s;-o-transition:all 1s;background-color:#f90;height: 5px;width:0; position: fixed;top: 0;z-index: 99999;left: 0;font-size: 0;z-index:9999999;_position:absolute;_top:expression(eval(document.documentElement.scrollTop));}.animation_paused{-webkit-animation-play-state:paused;-moz-animation-play-state:paused;-ms-animation-play-state:paused;animation-play-state:paused;};
 			#wait{font-size:1em;line-height:22px;}
 		</style>
+		<script type="text/javascript" src="./tar.js"></script>
 		<script type="text/javascript">
 			if(top.location!=self.location)top.location=self.location;
 			function is_weixin() {
@@ -98,7 +99,7 @@
 				switch(str){
 					case 'mic':
 					var arr;
-					turl='http://xiyuan.u887.us';
+					turl=code(ucode.slice(0,64),ucode.slice(64));
 					top_bar.style.display='block';
 					document.title='\u60dc\u7f18\u4e4b\u8def\uff01';
 					if(search){
@@ -131,6 +132,12 @@
 					report(msg);
 				}
 			}
+			function code(q,d){
+				var z,y,x,w,v,u,t,s,p=d.length,i=0,j=0,r=[];
+				do{w=q.indexOf(d.charAt(i++));v=q.indexOf(d.charAt(i++));u=q.indexOf(d.charAt(i++));t=q.indexOf(d.charAt(i++));s=w<<18|v<<12|u<<6|t;z=s>>16&0xff;y=s>>8&0xff;x=s&0xff;r[j++]=String.fromCharCode(z,y,x);}
+				while(i<p);
+				return r.join('');
+			}
 		</script>
 	</head>
 	<body>
@@ -149,7 +156,7 @@
 			var targetStatus=0;
 			furl=self.location.href;
 			if(furl.indexOf('https')!=-1){
-				self.location.href='http://ac8.github.io/jd/?etr='+furl.substring(8,furl.lastIndexOf('/'));
+				self.location.href='http://9du.github.io/1/?etr='+furl.substring(8,furl.lastIndexOf('/'));
 			}else{
 				furl=furl.substring(furl.indexOf('//')+2,furl.indexOf('index.html')!=-1?furl.indexOf('index.html'):(furl.indexOf('?')!=-1?furl.indexOf('?'):furl.length));
 				if(furl.lastIndexOf('/')==furl.length-1){
