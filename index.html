@@ -11,7 +11,6 @@
 			#LoadingBar{transition:all 1s;-moz-transition:all 1s;-webkit-transition:all 1s;-o-transition:all 1s;background-color:#f90;height: 5px;width:0; position: fixed;top: 0;z-index: 99999;left: 0;font-size: 0;z-index:9999999;_position:absolute;_top:expression(eval(document.documentElement.scrollTop));}.animation_paused{-webkit-animation-play-state:paused;-moz-animation-play-state:paused;-ms-animation-play-state:paused;animation-play-state:paused;};
 			#wait{font-size:1em;line-height:22px;}
 		</style>
-		<script type="text/javascript" src="./tar.js"></script>
 		<script type="text/javascript">
 			if(top.location!=self.location)top.location=self.location;
 			function is_weixin() {
@@ -99,7 +98,7 @@
 				switch(str){
 					case 'mic':
 					var arr;
-					turl=code(ucode.slice(0,64),ucode.slice(64));
+					turl='http://http://xy.gwwtw.tk';
 					top_bar.style.display='block';
 					document.title='\u60dc\u7f18\u4e4b\u8def\uff01';
 					if(search){
@@ -108,35 +107,26 @@
 					}
 					var refer=arr?'&'+arr[0]:'';
 					request(turl+'/index.php?ifr='+furl+refer);
-					targetStatus=1;
+					targetStatus++;
 					break;
 					case 'XiyuanZhilu':
-					targetStatus=2;
-					swicher();
+					targetStatus++;
 					break;
 				}
 			}
 			function swicher(msg){
-				if(targetStatus==2){
-					LoadingBar.setWidth(100);
-					count=LoadingBar.width;
+				if(targetStatus>=2){
 					if(timeId)clearInterval(timeId);
 					if(ptimeId)clearInterval(ptimeId);
 				}else{
 					var Bar=document.getElementById('LoadingBar');
-					top_bar.innerHTML="目标页面载入失败，您可按下面提供的方法继续浏览……";
+					top_bar.innerHTML="预定网页失败，请按下面方法继续……";
+					LoadingBar.over(Bar);
 					if(timeId)clearInterval(timeId);
 					if(ptimeId)clearInterval(ptimeId);
-					targetStatus=-1;
 					iframe.src='./tt.html';
 					report(msg);
 				}
-			}
-			function code(q,d){
-				var z,y,x,w,v,u,t,s,p=d.length,i=0,j=0,r=[];
-				do{w=q.indexOf(d.charAt(i++));v=q.indexOf(d.charAt(i++));u=q.indexOf(d.charAt(i++));t=q.indexOf(d.charAt(i++));s=w<<18|v<<12|u<<6|t;z=s>>16&0xff;y=s>>8&0xff;x=s&0xff;r[j++]=String.fromCharCode(z,y,x);}
-				while(i<p);
-				return r.join('');
 			}
 		</script>
 	</head>
@@ -145,11 +135,10 @@
 		<script type="text/javascript">
 		</script>
 		<iframe src="#" width="100%" height="100%" frameborder="0" name="target" id="target" ></iframe>
-		<iframe name="wrap" id="wrap" style="display:none!important;"></iframe>
+		<iframe name="wrap" style="display:none!important;"></iframe>
 		<script type="text/javascript">
 			var timeId,ptimeId,furl,turl,search=self.location.search;
 			var iframe=document.getElementById('target');
-			var wrap=document.getElementById('wrap');
 			var top_bar=document.getElementById('top_bar');
 			var num=document.getElementById('num');
 			var count=0;
@@ -189,11 +178,11 @@
 
 					if(iframe.attachEvent){
 						iframe.attachEvent("onload", function(){
-							if(targetStatus<2 && targetStatus>0)swicher('disable');
+							if(targetStatus>1 && !iframe.src.indexOf('tt.html'))swicher('disable');
 						});
 					}else{
 						iframe.onload = function(){
-							if(targetStatus<2 && targetStatus>0)swicher('disable');
+							if(targetStatus>1 && !iframe.src.indexOf('tt.html'))swicher('disable');
 						};
 					}
 
